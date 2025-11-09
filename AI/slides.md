@@ -54,15 +54,7 @@
 
 <!-- .slide: data-background="frames/A_Fighting_Fire_with_Data/frame_0010_t166.54s.jpg" data-background-size="contain" data-background-color="white" -->
 
-<div style="color: black !important;">
-
-## Structured to Unstructured Decisions
-
-- Structured
-- Semi-structured
-- Unstructured
-
-</div>
+## Decision Types
 
 ---
 
