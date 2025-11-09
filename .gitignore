@@ -4,10 +4,11 @@ videos/*.avi
 videos/*.mov
 videos/*.mkv
 
-# Note: frames/ and slides.md are NOT ignored so they can be served via GitHub Pages
-# If you want to ignore them, uncomment the lines below:
-# frames/
-# slides.md
+# Note: Presentation directories (AI/, Week1/, etc.) are NOT ignored
+# so they can be served via GitHub Pages. Each directory contains:
+# - index.html
+# - slides.md
+# - frames/ directory with images
 
 # Python
 __pycache__/

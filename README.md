@@ -194,6 +194,47 @@ To deploy your presentation to GitHub Pages:
 
 The `frames/` directory and `slides.md` are included in the repository so GitHub Pages can serve them. Video files in `videos/` are excluded by default (they're typically too large for git).
 
+## Organizing Presentations in Directories
+
+You can create multiple presentations, each in its own directory with its own URL.
+
+### Create a New Presentation
+
+```bash
+# 1. Add videos to videos/ directory
+cp your_video.mp4 videos/
+
+# 2. Create presentation with a name
+./create_presentation.sh AI
+
+# 3. Access at: https://aykutfirat.github.io/REPOSITORY_NAME/AI/
+```
+
+### Update an Existing Presentation
+
+```bash
+# Add new videos, then update:
+./update_presentation_dir.sh AI --push
+```
+
+See `PRESENTATION_DIRECTORIES.md` for detailed documentation on organizing multiple presentations.
+
+## Weekly Updates
+
+For updating your presentation weekly with new videos, see `WEEKLY_WORKFLOW.md` for a detailed guide.
+
+**Quick update (single presentation):**
+```bash
+# Add new videos to videos/ directory, then:
+./update_presentation.sh --push
+```
+
+**Quick update (named presentation):**
+```bash
+# Add new videos, then:
+./update_presentation_dir.sh AI --push
+```
+
 ## License
 
 This project is provided as-is for personal use.

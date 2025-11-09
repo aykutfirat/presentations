@@ -63,9 +63,14 @@ def generate_reveal_markdown(frames_dir, output_file, title="Presentation", them
     for video_name, images in image_files:
         for img_path in images:
             # Use relative path from output file to image
+            # If output_file is in a subdirectory, paths should be relative to that directory
             relative_path = os.path.relpath(img_path, output_file.parent)
             # Replace backslashes with forward slashes for cross-platform compatibility
             relative_path = relative_path.replace('\\', '/')
+            # Ensure path uses forward slashes for web compatibility
+            if not relative_path.startswith('./') and not relative_path.startswith('../'):
+                # If path doesn't start with ./ or ../, it might need adjustment
+                pass
             
             # Don't add separator before first slide
             if not first_slide:
