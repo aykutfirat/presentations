@@ -239,7 +239,7 @@ Due process
 
 <!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0019_t337.33s.jpg" data-background-size="contain" data-background-color="white" style="text-align: left;" -->
 
-<div class="title-top" id="balanced-scorecard-title">Balanced Scorecard</div>
+## Balanced Scorecard
 
 <div style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); color: black !important; font-size: 0.7em; padding-left: 10px; line-height: 1.8; margin-top: 30px;">
 
