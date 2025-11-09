@@ -94,9 +94,20 @@
 
 ---
 
-<!-- .slide: data-background="frames/A_Fighting_Fire_with_Data/frame_0017_t304.96s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/A_Fighting_Fire_with_Data/frame_0017_t304.96s.jpg" data-background-size="contain" data-background-color="white" -->
 
-<!-- Add your slide content here -->
+<div style="background: rgba(0, 0, 0, 0.8); padding: 30px; border-radius: 10px; display: inline-block; color: white;">
+
+## Key Criteria
+
+* Accuracy
+* Comprehensiveness  
+* Fairness
+* Speed
+* Coherence
+* Due process
+
+</div>
 
 ---
 
@@ -208,20 +219,9 @@
 
 ---
 
-<!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0017_t304.50s.jpg" data-background-size="contain" data-background-color="white" -->
+<!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0017_t304.50s.jpg" data-background-size="contain" data-background-color="black" -->
 
-<div style="background: rgba(0, 0, 0, 0.8); padding: 30px; border-radius: 10px; display: inline-block; color: white;">
-
-## Key Criteria
-
-* Accuracy
-* Comprehensiveness  
-* Fairness
-* Speed
-* Coherence
-* Due process
-
-</div>
+<!-- Add your slide content here -->
 
 ---
 
