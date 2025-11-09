@@ -36,18 +36,20 @@
         .reveal .slides section[data-background] * {
             color: white !important;
         }
+        /* Force text box to left edge without overlapping content */
+        .reveal .slides section div[style*="position: fixed"][style*="left: 0"],
         .reveal .slides section div[style*="position: absolute"][style*="left: 0"] {
             left: 0 !important;
             margin-left: 0 !important;
-            padding-left: 10px !important;
+            padding-left: 8px !important;
         }
-        /* Ensure slide sections can have absolute positioned content at edges */
+        /* Ensure slide sections can have positioned content at edges */
         .reveal .slides section {
             position: relative;
+            overflow: visible;
         }
-        .reveal .slides section[data-background] div[style*="left: 0"] {
-            left: 0 !important;
-            margin: 0 !important;
+        .reveal .slides section[data-background] {
+            overflow: visible;
         }
     </style>
 </head>
