@@ -136,6 +136,30 @@
         });
         
         Reveal.addEventListener('ready', function() {
+            // Move "Balanced Scorecard" title to top after markdown is loaded
+            setTimeout(function() {
+                var slides = document.querySelectorAll('.reveal .slides section');
+                slides.forEach(function(slide) {
+                    var bg = slide.getAttribute('data-background');
+                    if (bg && bg.includes('frame_0019_t337.33s')) {
+                        var titleDiv = slide.querySelector('.title-top');
+                        if (titleDiv) {
+                            titleDiv.style.position = 'absolute';
+                            titleDiv.style.top = '0';
+                            titleDiv.style.left = '0';
+                            titleDiv.style.right = '0';
+                            titleDiv.style.textAlign = 'center';
+                            titleDiv.style.color = 'black';
+                            titleDiv.style.fontSize = '1.8em';
+                            titleDiv.style.fontWeight = 'bold';
+                            titleDiv.style.margin = '0';
+                            titleDiv.style.padding = '10px 0';
+                            titleDiv.style.zIndex = '1000';
+                        }
+                    }
+                });
+            }, 1000);
+            
             setTimeout(function() {
                 var revealElement = document.querySelector('.reveal');
                 revealElement.addEventListener('click', function(event) {
