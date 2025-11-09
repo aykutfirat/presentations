@@ -210,18 +210,14 @@
 
 <!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0017_t304.50s.jpg" data-background-size="contain" data-background-color="black" -->
 
-<div style="background: rgba(0,0,0,0.7); padding: 20px; border-radius: 10px; display: inline-block;">
-
 ## Key Criteria
 
-- Accuracy
-- Comprehensiveness
-- Fairness
-- Speed
-- Coherence
-- Due process
-
-</div>
+* Accuracy
+* Comprehensiveness  
+* Fairness
+* Speed
+* Coherence
+* Due process
 
 ---
 
