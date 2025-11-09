@@ -1,0 +1,33 @@
+# Videos (large files, typically shouldn't be in git)
+videos/*.mp4
+videos/*.avi
+videos/*.mov
+videos/*.mkv
+
+# Note: frames/ and slides.md are NOT ignored so they can be served via GitHub Pages
+# If you want to ignore them, uncomment the lines below:
+# frames/
+# slides.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
