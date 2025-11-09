@@ -162,46 +162,6 @@
             backgroundTransition: 'fade'
         });
         
-        function moveTitleToTop() {
-            var slides = document.querySelectorAll('.reveal .slides section');
-            slides.forEach(function(slide) {
-                var bg = slide.getAttribute('data-background');
-                if (bg && bg.includes('frame_0019_t337.33s')) {
-                    // Try to find the title by text content
-                    var allElements = slide.querySelectorAll('*');
-                    var titleElement = null;
-                    
-                    for (var i = 0; i < allElements.length; i++) {
-                        var el = allElements[i];
-                        if (el.textContent && el.textContent.trim() === 'Balanced Scorecard') {
-                            titleElement = el;
-                            break;
-                        }
-                    }
-                    
-                    // If not found, try selectors
-                    if (!titleElement) {
-                        titleElement = slide.querySelector('.title-top') || 
-                                      slide.querySelector('#balanced-scorecard-title') ||
-                                      slide.querySelector('div:first-child') ||
-                                      slide.querySelector('h2');
-                    }
-                    
-                    if (titleElement && titleElement.textContent.includes('Balanced Scorecard')) {
-                        // Remove from parent and re-append to slide directly
-                        titleElement.remove();
-                        
-                        // Create new div with absolute positioning
-                        var newTitle = document.createElement('div');
-                        newTitle.textContent = 'Balanced Scorecard';
-                        newTitle.style.cssText = 'position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; text-align: center !important; color: black !important; font-size: 1.8em !important; font-weight: bold !important; margin: 0 !important; padding: 10px 0 !important; z-index: 1000 !important; width: 100% !important;';
-                        slide.appendChild(newTitle);
-                        console.log('Moved Balanced Scorecard title to top');
-                    }
-                }
-            });
-        }
-        
         Reveal.addEventListener('ready', function() {
             // Try multiple times with increasing delays
             setTimeout(moveTitleToTop, 500);
