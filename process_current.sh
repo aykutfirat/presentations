@@ -114,6 +114,12 @@ for PRESENTATION_NAME in "${presentation_dirs[@]}"; do
     # Create presentation directory if it doesn't exist
     mkdir -p "$PRESENTATION_DIR"
     
+    # Clean old frames directory to ensure fresh extraction
+    if [ -d "$OUTPUT_DIR" ]; then
+        echo "Cleaning old frames directory..."
+        rm -rf "$OUTPUT_DIR"
+    fi
+    
     # Step 1: Extract frames from videos
     echo "Step 1: Extracting frames from videos in $VIDEO_DIR..."
     $PYTHON_CMD extract_frames.py "$VIDEO_DIR" -o "$OUTPUT_DIR" -d --threshold "$THRESHOLD" --hist-threshold "$HIST_THRESHOLD"
