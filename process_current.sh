@@ -337,8 +337,19 @@ else
         DATE=$(date +"%Y-%m-%d %H:%M:%S")
         PRESENTATION_LIST=$(IFS=', '; echo "${presentation_dirs[*]}")
         
-        git add .
-        git commit -m "Update presentations: $PRESENTATION_LIST - $DATE" || echo "Nothing to commit"
+        # Add only presentation files and scripts, not videos
+        git add index.html .gitignore extract_frames.py generate_slides.py *.sh *.md 2>/dev/null || true
+        for dir in "${presentation_dirs[@]}"; do
+            # Add presentation directory (excludes videos via .gitignore)
+            git add "$dir/" 2>/dev/null || true
+        done
+        
+        # Check if there are changes to commit
+        if ! git diff --cached --quiet 2>/dev/null; then
+            git commit -m "Update presentations: $PRESENTATION_LIST - $DATE"
+        else
+            echo "No changes to commit."
+        fi
         
         if [ "$AUTO_PUSH" = true ]; then
             echo ""
