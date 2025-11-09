@@ -210,7 +210,12 @@
 
 <!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0017_t304.50s.jpg" data-background-size="contain" data-background-color="black" -->
 
-<!-- Add your slide content here -->
+- Accuracy
+- Comprehensiveness
+- Fairness
+- Speed
+- Coherence
+- Due process
 
 ---
 
