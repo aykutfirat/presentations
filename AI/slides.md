@@ -96,7 +96,7 @@
 
 <!-- .slide: data-background="frames/A_Fighting_Fire_with_Data/frame_0017_t304.96s.jpg" data-background-size="contain" data-background-color="white" -->
 
-<div style="background: rgba(0, 0, 0, 0.8); padding: 15px 20px; border-radius: 0 10px 10px 0; display: inline-block; color: white; text-align: left; font-size: 0.6em; position: absolute; left: 0; top: 50%; transform: translateY(-50%);">
+<div style="background: rgba(0, 0, 0, 0.8); padding: 15px 20px 15px 10px; border-radius: 0 10px 10px 0; display: inline-block; color: white; text-align: left; font-size: 0.6em; position: absolute; left: 0; margin-left: 0; top: 50%; transform: translateY(-50%);">
 
 * Accuracy
 * Comprehensiveness  
