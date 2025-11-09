@@ -11,18 +11,20 @@ from pathlib import Path
 from collections import defaultdict
 
 
-def are_frames_similar(img1_path, img2_path, similarity_threshold=0.98):
+def are_frames_similar(img1_path, img2_path, similarity_threshold=0.95, mse_threshold=150):
     """
     Check if two images are very similar (potential duplicates).
+    Also filters out black/dark frames.
     
     Args:
         img1_path: Path to first image
         img2_path: Path to second image
-        similarity_threshold: Histogram correlation threshold (default: 0.98)
+        similarity_threshold: Histogram correlation threshold (default: 0.95)
                             Higher = more strict (fewer duplicates detected)
+        mse_threshold: Maximum MSE for considering frames similar (default: 150)
     
     Returns:
-        True if images are similar, False otherwise
+        True if images are similar or if either is black, False otherwise
     """
     try:
         img1 = cv2.imread(str(img1_path))
@@ -31,15 +33,33 @@ def are_frames_similar(img1_path, img2_path, similarity_threshold=0.98):
         if img1 is None or img2 is None:
             return False
         
-        # Resize to same size for comparison
-        height = min(img1.shape[0], img2.shape[0])
-        width = min(img1.shape[1], img2.shape[1])
+        # Resize to same size for comparison (use smaller size for speed)
+        height = min(img1.shape[0], img2.shape[0], 480)
+        width = min(img1.shape[1], img2.shape[1], 640)
         img1_resized = cv2.resize(img1, (width, height))
         img2_resized = cv2.resize(img2, (width, height))
         
         # Convert to grayscale
         gray1 = cv2.cvtColor(img1_resized, cv2.COLOR_BGR2GRAY)
         gray2 = cv2.cvtColor(img2_resized, cv2.COLOR_BGR2GRAY)
+        
+        # Check if either frame is too dark/black
+        avg_bright1 = np.mean(gray1)
+        avg_bright2 = np.mean(gray2)
+        std_bright1 = np.std(gray1)
+        std_bright2 = np.std(gray2)
+        
+        # If either frame is very dark and low contrast, consider it a duplicate to filter out
+        is_black1 = avg_bright1 < 50 and std_bright1 < 20
+        is_black2 = avg_bright2 < 50 and std_bright2 < 20
+        
+        # If both are black/dark, they're similar
+        if is_black1 and is_black2:
+            return True
+        
+        # If one is black and the other is not very different (also dark), filter it
+        if (is_black1 or is_black2) and (avg_bright1 < 80 or avg_bright2 < 80):
+            return True
         
         # Calculate histogram correlation
         hist1 = cv2.calcHist([gray1], [0], None, [256], [0, 256])
@@ -50,7 +70,7 @@ def are_frames_similar(img1_path, img2_path, similarity_threshold=0.98):
         mse = np.mean((gray1 - gray2) ** 2)
         
         # Consider similar if high correlation AND low MSE
-        is_similar = hist_corr > similarity_threshold and mse < 100
+        is_similar = hist_corr > similarity_threshold and mse < mse_threshold
         
         return is_similar
     except Exception as e:
@@ -112,14 +132,34 @@ def generate_reveal_markdown(frames_dir, output_file, title="Presentation", them
     for video_name, images in image_files:
         all_images.extend(images)
     
-    # Filter out consecutive duplicates
+    # Filter out consecutive duplicates and black/dark frames
     filtered_images = []
     previous_image = None
     duplicate_count = 0
+    black_frame_count = 0
+    
+    def is_black_frame(img_path):
+        """Check if a frame is too dark/black to be useful."""
+        try:
+            img = cv2.imread(str(img_path))
+            if img is None:
+                return True
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            avg_brightness = np.mean(gray)
+            std_brightness = np.std(gray)
+            # Consider black if average brightness < 50 and low contrast
+            return avg_brightness < 50 and std_brightness < 20
+        except:
+            return False
     
     for img_path in all_images:
+        # First, check if this frame is too dark/black
+        if is_black_frame(img_path):
+            black_frame_count += 1
+            continue
+        
         if previous_image is None:
-            # First image - always include
+            # First image - include it (already checked it's not black)
             filtered_images.append(img_path)
             previous_image = img_path
         else:
@@ -133,8 +173,13 @@ def generate_reveal_markdown(frames_dir, output_file, title="Presentation", them
                 filtered_images.append(img_path)
                 previous_image = img_path
     
-    if duplicate_count > 0:
-        print(f"  Filtered out {duplicate_count} duplicate/consecutive similar frames")
+    if duplicate_count > 0 or black_frame_count > 0:
+        msg_parts = []
+        if black_frame_count > 0:
+            msg_parts.append(f"{black_frame_count} black/dark frames")
+        if duplicate_count > 0:
+            msg_parts.append(f"{duplicate_count} duplicate frames")
+        print(f"  Filtered out: {', '.join(msg_parts)}")
     
     # Generate slides from filtered images
     first_slide = True
@@ -166,8 +211,11 @@ def generate_reveal_markdown(frames_dir, output_file, title="Presentation", them
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(''.join(markdown_lines))
     
+    total_original = sum(len(images) for _, images in image_files)
+    total_filtered = len(filtered_images)
+    
     print(f"Generated reveal.js markdown: {output_file}")
-    print(f"Total slides: {sum(len(images) for _, images in image_files)}")
+    print(f"Total slides: {total_filtered} (from {total_original} frames)")
 
 
 def main():

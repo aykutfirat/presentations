@@ -238,12 +238,6 @@
 
 ---
 
-<!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0020_t378.38s.jpg" data-background-size="contain" data-background-color="black" -->
-
-<!-- Add your slide content here -->
-
----
-
 <!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0021_t396.71s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
