@@ -36,9 +36,8 @@
         .reveal .slides section[data-background] * {
             color: white !important;
         }
-        /* Force text box to left edge without overlapping content */
-        .reveal .slides section div[style*="position: fixed"][style*="left: 0"],
-        .reveal .slides section div[style*="position: absolute"][style*="left: 0"] {
+        /* Force text box to absolute left edge without overlapping content */
+        .reveal .slides section[data-background] div[style*="left: 0"] {
             left: 0 !important;
             margin-left: 0 !important;
             padding-left: 8px !important;
@@ -50,6 +49,11 @@
         }
         .reveal .slides section[data-background] {
             overflow: visible;
+            padding: 0;
+        }
+        /* Remove any default padding that might push content away from edge */
+        .reveal .slides section[data-background] .slide-content {
+            padding: 0;
         }
     </style>
 </head>
