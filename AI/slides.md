@@ -208,7 +208,9 @@
 
 ---
 
-<!-- .slide: data-background-color="#333" -->
+<!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0017_t304.50s.jpg" data-background-size="contain" data-background-color="white" -->
+
+<div style="background: rgba(0, 0, 0, 0.8); padding: 30px; border-radius: 10px; display: inline-block; color: white;">
 
 ## Key Criteria
 
@@ -218,6 +220,8 @@
 * Speed
 * Coherence
 * Due process
+
+</div>
 
 ---
 
