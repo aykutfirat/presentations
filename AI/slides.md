@@ -382,12 +382,6 @@
 
 ---
 
-<!-- .slide: data-background="frames/D_The_AI_Family_Tree/frame_0002_t32.08s.jpg" data-background-size="contain" data-background-color="black" -->
-
-<!-- Add your slide content here -->
-
----
-
 <!-- .slide: data-background="frames/D_The_AI_Family_Tree/frame_0003_t48.25s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
@@ -497,12 +491,6 @@
 ---
 
 <!-- .slide: data-background="frames/D_The_AI_Family_Tree/frame_0021_t339.79s.jpg" data-background-size="contain" data-background-color="black" -->
-
-<!-- Add your slide content here -->
-
----
-
-<!-- .slide: data-background="frames/D_The_AI_Family_Tree/frame_0022_t361.42s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
