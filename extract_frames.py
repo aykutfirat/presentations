@@ -336,10 +336,12 @@ def main():
             print(f"Error: Not a supported video file: {video_path}")
             sys.exit(1)
     elif video_path.is_dir():
-        video_files = list(video_path.glob("*.mp4")) + \
-                      list(video_path.glob("*.MP4")) + \
-                      list(video_path.glob("*.avi")) + \
-                      list(video_path.glob("*.mov"))
+        video_files = sorted(list(video_path.glob("*.mp4"))) + \
+                      sorted(list(video_path.glob("*.MP4"))) + \
+                      sorted(list(video_path.glob("*.avi"))) + \
+                      sorted(list(video_path.glob("*.mov")))
+        # Sort all video files alphabetically by filename
+        video_files = sorted(video_files, key=lambda x: x.name.lower())
     else:
         print(f"Error: Path not found: {video_path}")
         sys.exit(1)
@@ -348,7 +350,7 @@ def main():
         print(f"Error: No video files found in: {video_path}")
         sys.exit(1)
     
-    print(f"Found {len(video_files)} video file(s)\n")
+    print(f"Found {len(video_files)} video file(s) (processing in alphabetical order)\n")
     
     all_frames = []
     for video_file in video_files:
