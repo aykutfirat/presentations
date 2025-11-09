@@ -49,10 +49,11 @@
             loop: false,
             mouseWheel: false,
             markdown: {
-                separator: '---',
-                verticalSeparator: '^\n\n',
+                separator: '^\r?\n---\r?\n$',
+                verticalSeparator: '^\r?\n\r?\n$',
                 notesSeparator: '^Note:',
-                highlightCode: true
+                highlightCode: true,
+                smartypants: true
             },
             plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ],
             transition: 'slide',
