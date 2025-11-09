@@ -36,6 +36,13 @@
         .reveal .slides section[data-background] * {
             color: white !important;
         }
+        /* Override for specific black text on white backgrounds */
+        .reveal .slides section[data-background-color="white"] div[style*="color: black"] {
+            color: black !important;
+        }
+        .reveal .slides section[data-background-color="white"] div[style*="color: black"] * {
+            color: black !important;
+        }
         /* Force text box to absolute left edge without overlapping content */
         .reveal .slides section[data-background] div[style*="left: 0"] {
             left: 0 !important;
