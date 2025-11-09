@@ -46,6 +46,18 @@
         .reveal .slides section[data-background-color="white"] h2[style*="color: black"] {
             color: black !important;
         }
+        /* Ensure h2 titles with absolute positioning stay at top */
+        .reveal .slides section[data-background-color="white"] h2[style*="position: absolute"][style*="top:"] {
+            position: absolute !important;
+            top: 10px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            text-align: center !important;
+            color: black !important;
+            z-index: 100 !important;
+        }
         /* Force text box to absolute left edge without overlapping content */
         .reveal .slides section[data-background] div[style*="left: 0"] {
             left: 0 !important;
