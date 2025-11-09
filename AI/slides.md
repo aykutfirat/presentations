@@ -46,12 +46,6 @@
 
 ---
 
-<!-- .slide: data-background="frames/A_Fighting_Fire_with_Data/frame_0008_t131.96s.jpg" data-background-size="contain" data-background-color="black" -->
-
-<!-- Add your slide content here -->
-
----
-
 <!-- .slide: data-background="frames/A_Fighting_Fire_with_Data/frame_0009_t149.88s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
@@ -101,12 +95,6 @@
 ---
 
 <!-- .slide: data-background="frames/A_Fighting_Fire_with_Data/frame_0017_t304.96s.jpg" data-background-size="contain" data-background-color="black" -->
-
-<!-- Add your slide content here -->
-
----
-
-<!-- .slide: data-background="frames/A_Fighting_Fire_with_Data/frame_0018_t325.50s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
@@ -233,12 +221,6 @@
 ---
 
 <!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0019_t337.33s.jpg" data-background-size="contain" data-background-color="black" -->
-
-<!-- Add your slide content here -->
-
----
-
-<!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0021_t396.71s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
@@ -467,12 +449,6 @@
 ---
 
 <!-- .slide: data-background="frames/D_The_AI_Family_Tree/frame_0018_t295.54s.jpg" data-background-size="contain" data-background-color="black" -->
-
-<!-- Add your slide content here -->
-
----
-
-<!-- .slide: data-background="frames/D_The_AI_Family_Tree/frame_0019_t308.54s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
