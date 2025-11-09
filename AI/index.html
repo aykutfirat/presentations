@@ -41,7 +41,7 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section data-markdown="slides.md?v=3" data-separator="---" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+            <section data-markdown="slides.md" data-separator="---" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
             </section>
         </div>
     </div>
@@ -53,11 +53,6 @@
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/zoom/zoom.js"></script>
     
     <script>
-        // Force reload markdown file without cache
-        var markdownSection = document.querySelector('section[data-markdown]');
-        var markdownUrl = markdownSection.getAttribute('data-markdown');
-        markdownSection.setAttribute('data-markdown', markdownUrl.split('?')[0] + '?v=' + Date.now());
-        
         Reveal.initialize({
             hash: true,
             controls: true,
