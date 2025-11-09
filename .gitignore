@@ -1,8 +1,12 @@
 # Videos (large files, typically shouldn't be in git)
-videos/*.mp4
-videos/*.avi
-videos/*.mov
-videos/*.mkv
+videos/**/*.mp4
+videos/**/*.avi
+videos/**/*.mov
+videos/**/*.mkv
+videos/**/*.MP4
+videos/**/*.AVI
+videos/**/*.MOV
+videos/**/*.MKV
 
 # Note: Presentation directories (AI/, Week1/, etc.) are NOT ignored
 # so they can be served via GitHub Pages. Each directory contains:
