@@ -188,24 +188,34 @@ def extract_different_frames(video_path, output_dir, threshold=30.0, min_hist_di
         else:
             frame_resized = frame.copy()
         
-        # Save first frame always
+        # Save first frame always (but check if it's not too dark)
         if last_saved_frame is None:
-            # Resize original frame for saving if needed
-            if width > 1920:
-                scale = 1920 / width
-                new_width = 1920
-                new_height = int(height * scale)
-                frame_to_save = cv2.resize(frame, (new_width, new_height), interpolation=cv2.INTER_AREA)
-            else:
-                frame_to_save = frame.copy()
+            # Check if first frame is too dark
+            gray_frame = cv2.cvtColor(frame_resized, cv2.COLOR_BGR2GRAY)
+            avg_brightness = np.mean(gray_frame)
+            std_brightness = np.std(gray_frame)
+            is_too_dark = avg_brightness < 40 and std_brightness < 15
             
-            frame_filename = f"frame_{saved_count:04d}_t{timestamp:.2f}s.jpg"
-            frame_path = video_output_dir / frame_filename
-            cv2.imwrite(str(frame_path), frame_to_save, [cv2.IMWRITE_JPEG_QUALITY, 95])
-            extracted_frames.append(frame_path)
-            last_saved_frame = frame_resized.copy()
-            saved_count += 1
-            print(f"  Saved frame {saved_count} (first frame): {frame_filename}")
+            if not is_too_dark:
+                # Resize original frame for saving if needed
+                if width > 1920:
+                    scale = 1920 / width
+                    new_width = 1920
+                    new_height = int(height * scale)
+                    frame_to_save = cv2.resize(frame, (new_width, new_height), interpolation=cv2.INTER_AREA)
+                else:
+                    frame_to_save = frame.copy()
+                
+                frame_filename = f"frame_{saved_count:04d}_t{timestamp:.2f}s.jpg"
+                frame_path = video_output_dir / frame_filename
+                cv2.imwrite(str(frame_path), frame_to_save, [cv2.IMWRITE_JPEG_QUALITY, 95])
+                extracted_frames.append(frame_path)
+                last_saved_frame = frame_resized.copy()
+                saved_count += 1
+                print(f"  Saved frame {saved_count} (first frame): {frame_filename}")
+            else:
+                # Skip first frame if too dark, will try next frame
+                continue
         else:
             # Compare with last saved frame
             mse, hist_corr = calculate_frame_difference(last_saved_frame, frame_resized)
@@ -213,7 +223,17 @@ def extract_different_frames(video_path, output_dir, threshold=30.0, min_hist_di
             # Check if frames are significantly different
             is_different = mse > threshold or hist_corr < min_hist_diff
             
-            if is_different:
+            # Filter out black/dark frames (fade to black, black screens, etc.)
+            # Calculate average brightness of the frame
+            gray_frame = cv2.cvtColor(frame_resized, cv2.COLOR_BGR2GRAY)
+            avg_brightness = np.mean(gray_frame)
+            std_brightness = np.std(gray_frame)
+            
+            # Skip frames that are too dark (black screens, fade to black)
+            # Threshold: average brightness < 40 and low contrast (std < 15)
+            is_too_dark = avg_brightness < 40 and std_brightness < 15
+            
+            if is_different and not is_too_dark:
                 # Resize original frame for saving if needed
                 if width > 1920:
                     scale = 1920 / width
