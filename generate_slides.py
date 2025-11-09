@@ -11,7 +11,7 @@ from pathlib import Path
 from collections import defaultdict
 
 
-def are_frames_similar(img1_path, img2_path, similarity_threshold=0.95, mse_threshold=150):
+def are_frames_similar(img1_path, img2_path, similarity_threshold=0.92, mse_threshold=200):
     """
     Check if two images are very similar (potential duplicates).
     Also filters out black/dark frames.
@@ -66,13 +66,21 @@ def are_frames_similar(img1_path, img2_path, similarity_threshold=0.95, mse_thre
         hist2 = cv2.calcHist([gray2], [0], None, [256], [0, 256])
         hist_corr = cv2.compareHist(hist1, hist2, cv2.HISTCMP_CORREL)
         
-        # Calculate MSE
+        # Calculate MSE (mean squared error)
         mse = np.mean((gray1 - gray2) ** 2)
         
-        # Consider similar if high correlation AND low MSE
-        is_similar = hist_corr > similarity_threshold and mse < mse_threshold
+        # Calculate absolute difference
+        abs_diff = np.mean(np.abs(gray1.astype(float) - gray2.astype(float)))
         
-        return is_similar
+        # Consider frames similar if:
+        # 1. High histogram correlation AND low MSE (similar color distribution and pixel values)
+        # 2. Low absolute difference (very similar pixel-wise)
+        # 3. Very high histogram correlation (almost identical images)
+        is_similar_hist_mse = hist_corr > similarity_threshold and mse < mse_threshold
+        is_similar_abs_diff = abs_diff < 15  # Very low absolute difference
+        is_very_similar_hist = hist_corr > 0.98  # Almost identical histogram
+        
+        return is_similar_hist_mse or is_similar_abs_diff or is_very_similar_hist
     except Exception as e:
         # If comparison fails, assume not similar
         return False
@@ -147,8 +155,14 @@ def generate_reveal_markdown(frames_dir, output_file, title="Presentation", them
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             avg_brightness = np.mean(gray)
             std_brightness = np.std(gray)
-            # Consider black if average brightness < 50 and low contrast
-            return avg_brightness < 50 and std_brightness < 20
+            # Consider dark/black if:
+            # 1. Very dark and low contrast (black screen)
+            # 2. Moderately dark with very low contrast (fade to black)
+            # 3. Very low average brightness (mostly black)
+            is_very_dark = avg_brightness < 50 and std_brightness < 20
+            is_dark_low_contrast = avg_brightness < 80 and std_brightness < 25
+            is_mostly_black = avg_brightness < 60
+            return is_very_dark or is_dark_low_contrast or is_mostly_black
         except:
             return False
     
