@@ -52,13 +52,17 @@
 
 ---
 
-<!-- .slide: data-background="frames/A_Fighting_Fire_with_Data/frame_0010_t166.54s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/A_Fighting_Fire_with_Data/frame_0010_t166.54s.jpg" data-background-size="contain" data-background-color="white" -->
+
+<div style="color: black !important;">
 
 ## Decisions
 
 - Structured
 - Semi-structured
 - Unstructured
+
+</div>
 
 ---
 
@@ -233,24 +237,19 @@ Due process
 
 ---
 
-<!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0019_t337.33s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/B_Data_Into_Decisions/frame_0019_t337.33s.jpg" data-background-size="contain" data-background-color="white" -->
 
+<div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); color: black !important; font-size: 1.2em; font-weight: bold;">
 ## Balanced Scorecard
-
-<div style="position: absolute; top: 20px; left: 20px; font-size: 0.9em; color: white !important;">
-Financial
 </div>
 
-<div style="position: absolute; top: 20px; right: 20px; font-size: 0.9em; color: white !important;">
-Customer
-</div>
+<div style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); color: black !important; font-size: 0.7em; padding-left: 10px;">
 
-<div style="position: absolute; bottom: 20px; left: 20px; font-size: 0.9em; color: white !important;">
-Business Processes
-</div>
-
-<div style="position: absolute; bottom: 20px; right: 20px; font-size: 0.9em; color: white !important;">
+Financial<br><br>
+Customer<br><br>
+Business Processes<br><br>
 Learning & Growth
+
 </div>
 
 ---
