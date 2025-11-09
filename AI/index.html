@@ -41,6 +41,14 @@
             margin-left: 0 !important;
             padding-left: 10px !important;
         }
+        /* Ensure slide sections can have absolute positioned content at edges */
+        .reveal .slides section {
+            position: relative;
+        }
+        .reveal .slides section[data-background] div[style*="left: 0"] {
+            left: 0 !important;
+            margin: 0 !important;
+        }
     </style>
 </head>
 <body>
