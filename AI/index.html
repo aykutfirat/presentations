@@ -120,6 +120,11 @@
             text-align: center !important;
         }
         
+        /* Override for white backgrounds - black text */
+        .reveal .slides section[data-background-color="white"] h2 {
+            color: black !important;
+        }
+        
         .print-pdf .reveal .slides > section.present, 
         .print-pdf .reveal .slides > section > section.present {
             min-height: 770px !important;
@@ -163,22 +168,6 @@
         });
         
         Reveal.addEventListener('ready', function() {
-            // Try multiple times with increasing delays
-            setTimeout(moveTitleToTop, 500);
-            setTimeout(moveTitleToTop, 1000);
-            setTimeout(moveTitleToTop, 2000);
-            setTimeout(moveTitleToTop, 3000);
-            
-            // Also move it when slide changes to that slide
-            Reveal.addEventListener('slidechanged', function(event) {
-                if (event.currentSlide) {
-                    var bg = event.currentSlide.getAttribute('data-background');
-                    if (bg && bg.includes('frame_0019_t337.33s')) {
-                        setTimeout(moveTitleToTop, 100);
-                    }
-                }
-            });
-            
             setTimeout(function() {
                 var revealElement = document.querySelector('.reveal');
                 revealElement.addEventListener('click', function(event) {
