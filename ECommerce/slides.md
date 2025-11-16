@@ -52,6 +52,12 @@
 
 ---
 
+<!-- .slide: data-background="frames/A_E-commerce_Revolution/frame_0011_t157.71s.jpg" data-background-size="contain" data-background-color="black" -->
+
+<!-- Add your slide content here -->
+
+---
+
 <!-- .slide: data-background="frames/A_E-commerce_Revolution/frame_0012_t176.79s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
@@ -184,31 +190,31 @@
 
 ---
 
-<!-- .slide: data-background="frames/B_The_Two_Faces_of_E-commerce/frame_0008_t197.00s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/B_The_Two_Faces_of_E-commerce/frame_0009_t197.00s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/B_The_Two_Faces_of_E-commerce/frame_0009_t216.38s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/B_The_Two_Faces_of_E-commerce/frame_0010_t216.38s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/B_The_Two_Faces_of_E-commerce/frame_0010_t240.50s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/B_The_Two_Faces_of_E-commerce/frame_0011_t240.50s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/B_The_Two_Faces_of_E-commerce/frame_0011_t274.71s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/B_The_Two_Faces_of_E-commerce/frame_0012_t274.71s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/B_The_Two_Faces_of_E-commerce/frame_0012_t300.29s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/B_The_Two_Faces_of_E-commerce/frame_0013_t300.29s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
@@ -268,7 +274,7 @@
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0004_t60.67s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0004_t60.92s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
@@ -286,73 +292,73 @@
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0007_t139.17s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0008_t139.17s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0008_t162.92s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0009_t162.92s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0009_t182.42s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0010_t182.42s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0010_t194.71s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0011_t194.71s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0012_t234.75s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0013_t234.75s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0013_t249.12s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0014_t249.12s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0014_t275.12s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0015_t275.12s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0015_t290.46s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0016_t290.46s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0016_t306.50s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0017_t306.50s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0017_t333.58s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0018_t333.58s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0018_t351.83s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0019_t351.83s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
 ---
 
-<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0019_t369.58s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0020_t369.58s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
@@ -472,7 +478,7 @@
 
 ---
 
-<!-- .slide: data-background="frames/D_Chewy_s_Gamble/frame_0021_t420.46s.jpg" data-background-size="contain" data-background-color="black" -->
+<!-- .slide: data-background="frames/D_Chewy_s_Gamble/frame_0022_t420.46s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
