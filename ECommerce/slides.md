@@ -40,6 +40,12 @@
 
 ---
 
+<!-- .slide: data-background="frames/A_E-commerce_Revolution/frame_0008_t124.08s.jpg" data-background-size="contain" data-background-color="black" -->
+
+<!-- Add your slide content here -->
+
+---
+
 <!-- .slide: data-background="frames/A_E-commerce_Revolution/frame_0009_t141.25s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
@@ -47,12 +53,6 @@
 ---
 
 <!-- .slide: data-background="frames/A_E-commerce_Revolution/frame_0010_t157.54s.jpg" data-background-size="contain" data-background-color="black" -->
-
-<!-- Add your slide content here -->
-
----
-
-<!-- .slide: data-background="frames/A_E-commerce_Revolution/frame_0011_t157.71s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 
@@ -311,6 +311,12 @@
 ---
 
 <!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0011_t194.71s.jpg" data-background-size="contain" data-background-color="black" -->
+
+<!-- Add your slide content here -->
+
+---
+
+<!-- .slide: data-background="frames/C_Map_to_Modern_E-commerce/frame_0012_t211.58s.jpg" data-background-size="contain" data-background-color="black" -->
 
 <!-- Add your slide content here -->
 

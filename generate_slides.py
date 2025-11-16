@@ -11,7 +11,7 @@ from pathlib import Path
 from collections import defaultdict
 
 
-def are_frames_similar(img1_path, img2_path, similarity_threshold=0.92, mse_threshold=200):
+def are_frames_similar(img1_path, img2_path, similarity_threshold=0.88, mse_threshold=5.0):
     """
     Check if two images are very similar (potential duplicates).
     Also filters out black/dark frames.
@@ -19,9 +19,9 @@ def are_frames_similar(img1_path, img2_path, similarity_threshold=0.92, mse_thre
     Args:
         img1_path: Path to first image
         img2_path: Path to second image
-        similarity_threshold: Histogram correlation threshold (default: 0.95)
+        similarity_threshold: Histogram correlation threshold (default: 0.88)
                             Higher = more strict (fewer duplicates detected)
-        mse_threshold: Maximum MSE for considering frames similar (default: 150)
+        mse_threshold: Maximum MSE for considering frames similar (default: 5.0)
     
     Returns:
         True if images are similar or if either is black, False otherwise
@@ -74,11 +74,11 @@ def are_frames_similar(img1_path, img2_path, similarity_threshold=0.92, mse_thre
         
         # Consider frames similar if:
         # 1. High histogram correlation AND low MSE (similar color distribution and pixel values)
-        # 2. Low absolute difference (very similar pixel-wise)
+        # 2. Low absolute difference (very similar pixel-wise) - made more aggressive
         # 3. Very high histogram correlation (almost identical images)
         is_similar_hist_mse = hist_corr > similarity_threshold and mse < mse_threshold
-        is_similar_abs_diff = abs_diff < 15  # Very low absolute difference
-        is_very_similar_hist = hist_corr > 0.98  # Almost identical histogram
+        is_similar_abs_diff = abs_diff < 2.0  # Very low absolute difference - made more aggressive
+        is_very_similar_hist = hist_corr > 0.95  # Almost identical histogram - made more aggressive
         
         return is_similar_hist_mse or is_similar_abs_diff or is_very_similar_hist
     except Exception as e:
