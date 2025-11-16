@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Presentation Slides</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css" id="theme">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css">
+    
+    <style>
+        .reveal .slides section {
+            text-align: center;
+        }
+        .reveal .slides section[data-background] {
+            color: white;
+        }
+        .reveal .slides section[data-background] h1,
+        .reveal .slides section[data-background] h2,
+        .reveal .slides section[data-background] h3 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown="slides.md" data-separator="---" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+            </section>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/zoom/zoom.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: true,
+            touch: true,
+            loop: false,
+            mouseWheel: false,
+            markdown: {
+                separator: '---',
+                verticalSeparator: '^\n\n',
+                notesSeparator: '^Note:',
+                highlightCode: true
+            },
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ],
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+        
+        Reveal.addEventListener('ready', function() {
+            setTimeout(function() {
+                var revealElement = document.querySelector('.reveal');
+                revealElement.addEventListener('click', function(event) {
+                    var target = event.target;
+                    if (!target.closest('.controls') && 
+                        !target.closest('a') && 
+                        !target.closest('button') &&
+                        !target.closest('.progress')) {
+                        Reveal.next();
+                    }
+                });
+                revealElement.addEventListener('contextmenu', function(event) {
+                    event.preventDefault();
+                    Reveal.prev();
+                    return false;
+                });
+                console.log('Click navigation: Left = next, Right = previous');
+            }, 800);
+        });
+    </script>
+</body>
+</html>
